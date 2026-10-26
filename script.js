@@ -9,6 +9,100 @@ const products = [
     description: "طراحی ظریف و مینیمال",
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80"
   },
+  
+const translations = {
+  fa: {
+    pageTitle: "GOLDEN | فروشگاه طلا و جواهر",
+    navHome: "صفحه اصلی",
+    navProducts: "محصولات",
+    navAbout: "درباره ما",
+    cart: "سبد خرید",
+    language: "English",
+    eyebrow: "LUXURY GOLD COLLECTION",
+    heroTitle: "درخشش تو،",
+    heroTitle2: "امضای زیبایی توست.",
+    heroDescription:
+      "مجموعه‌ای از زیباترین جواهرات با طراحی خاص برای لحظه‌هایی که می‌خواهند ماندگار شوند.",
+    shopNow: "مشاهده محصولات",
+    collection: "OUR COLLECTION",
+    productsTitle: "منتخب جواهرات",
+    productsDescription: "زیبایی در جزئیات معنا پیدا می‌کند.",
+    search: "جست‌وجوی محصول...",
+    all: "همه",
+    necklace: "گردنبند",
+    ring: "انگشتر",
+    bracelet: "دستبند",
+    add: "افزودن به سبد",
+    empty: "محصولی پیدا نشد.",
+    aboutEyebrow: "THE ART OF GOLD",
+    aboutTitle: "زیبایی، فراتر از زمان",
+    aboutDescription:
+      "در GOLDEN، هر قطعه داستانی از ظرافت، اصالت و سلیقه را روایت می‌کند. این فروشگاه یک پروژه نمونه برای نمایش طراحی وب است.",
+    footerText: "طراحی شده با عشق به زیبایی ✦",
+    copyright: "© 2026 GOLDEN — پروژه نمونه طراحی وب",
+    emptyCart: "سبد خرید شما خالی است.",
+    added: "به سبد خرید اضافه شد."
+  },
+
+  en: {
+    pageTitle: "GOLDEN | Luxury Jewelry Store",
+    navHome: "Home",
+    navProducts: "Products",
+    navAbout: "About Us",
+    cart: "Cart",
+    language: "فارسی",
+    eyebrow: "LUXURY GOLD COLLECTION",
+    heroTitle: "Your radiance,",
+    heroTitle2: "your signature.",
+    heroDescription:
+      "Discover beautifully crafted jewelry designed to make every moment unforgettable.",
+    shopNow: "Explore Collection",
+    collection: "OUR COLLECTION",
+    productsTitle: "Featured Jewelry",
+    productsDescription: "Beauty lives in the details.",
+    search: "Search products...",
+    all: "All",
+    necklace: "Necklaces",
+    ring: "Rings",
+    bracelet: "Bracelets",
+    add: "Add to Cart",
+    empty: "No products found.",
+    aboutEyebrow: "THE ART OF GOLD",
+    aboutTitle: "Beauty Beyond Time",
+    aboutDescription:
+      "At GOLDEN, every piece tells a story of elegance, authenticity, and style. This is a sample jewelry store website.",
+    footerText: "Designed with a love for beauty ✦",
+    copyright: "© 2026 GOLDEN — Web Design Portfolio Project",
+    emptyCart: "Your cart is empty.",
+    added: "added to your cart."
+  }
+};
+
+const productTranslations = {
+  1: { en: { name: "Ava Gold Necklace", description: "Delicate minimalist design" } },
+  2: { en: { name: "Classic Ring", description: "A choice for special moments" } },
+  3: { en: { name: "Elegance Bracelet", description: "A blend of elegance and shine" } },
+  4: { en: { name: "Minimal Necklace", description: "Beauty in simplicity" } },
+  5: { en: { name: "Radiant Ring", description: "A distinctive, timeless look" } },
+  6: { en: { name: "Golden Bracelet", description: "For everyday and formal styles" } }
+};
+
+let currentLanguage = localStorage.getItem("golden-language") || "fa";
+
+function t(key) {
+  return translations[currentLanguage][key];
+}
+
+function translatedProduct(product) {
+  if (currentLanguage === "fa") return product;
+
+  return {
+    ...product,
+    ...productTranslations[product.id].en,
+    categoryName: t(product.category)
+  };
+}
+
   {
     id: 2,
     name: "انگشتر کلاسیک",
