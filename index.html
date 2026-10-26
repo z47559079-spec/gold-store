@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فروشگاه آنلاین طلا و جواهر با طراحی لوکس">
+  <title>GOLDEN | فروشگاه طلا و جواهر</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="#">GOLDEN<span>.</span></a>
+
+    <nav class="nav">
+      <a href="#home">صفحه اصلی</a>
+      <a href="#products">محصولات</a>
+      <a href="#about">درباره ما</a>
+    </nav>
+
+    <button class="cart-button" id="cartButton">
+      سبد خرید <span id="cartCount">۰</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">LUXURY GOLD COLLECTION</p>
+        <h1>درخشش تو،<br><span>امضای زیبایی توست.</span></h1>
+        <p class="hero-description">
+          مجموعه‌ای از زیباترین جواهرات با طراحی خاص
+          برای لحظه‌هایی که می‌خواهند ماندگار شوند.
+        </p>
+        <a href="#products" class="primary-button">
+          مشاهده محصولات
+        </a>
+      </div>
+      <div class="hero-image" role="img" aria-label="مجموعه جواهرات طلایی"></div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <p class="eyebrow">OUR COLLECTION</p>
+        <h2>منتخب جواهرات</h2>
+        <p>زیبایی در جزئیات معنا پیدا می‌کند.</p>
+      </div>
+
+      <div class="toolbar">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="جست‌وجوی محصول..."
+          aria-label="جست‌وجوی محصول"
+        >
+        <div class="filters">
+          <button class="filter active" data-category="all">همه</button>
+          <button class="filter" data-category="necklace">گردنبند</button>
+          <button class="filter" data-category="ring">انگشتر</button>
+          <button class="filter" data-category="bracelet">دستبند</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+      <p class="empty-message" id="emptyMessage" hidden>
+        محصولی پیدا نشد.
+      </p>
+    </section>
+
+    <section class="about" id="about">
+      <p class="eyebrow">THE ART OF GOLD</p>
+      <h2>زیبایی، فراتر از زمان</h2>
+      <p>
+        در GOLDEN، هر قطعه داستانی از ظرافت، اصالت و سلیقه را روایت می‌کند.
+        این فروشگاه یک پروژه نمونه برای نمایش طراحی وب است.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#">GOLDEN<span>.</span></a>
+    <p>طراحی شده با عشق به زیبایی ✦</p>
+    <p>© 2026 GOLDEN — پروژه نمونه طراحی وب</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
