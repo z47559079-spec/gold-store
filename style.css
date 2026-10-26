@@ -412,3 +412,38 @@ button {
     text-align: center;
   }
 }
+
+/* Language support: keep the existing visual design */
+
+html[lang="fa"] body {
+  direction: rtl;
+}
+
+html[lang="en"] body {
+  direction: ltr;
+  font-family: Arial, sans-serif;
+}
+
+html[lang="en"] .hero-content {
+  align-items: flex-start;
+}
+
+html[lang="en"] .product-bottom {
+  direction: ltr;
+}
+
+html[lang="en"] .toolbar {
+  direction: ltr;
+}
+
+html[lang="en"] .nav {
+  direction: ltr;
+}
+
+/* Keep the layout responsive in both languages */
+@media (max-width: 600px) {
+  html[lang="en"] .nav {
+    justify-content: center;
+  }
+}
+
