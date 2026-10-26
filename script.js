@@ -243,18 +243,15 @@ grid.addEventListener("click", (event) => {
   cartCount.textContent = cart.length.toLocaleString("fa-IR");
   showToast(`${product.name} به سبد خرید اضافه شد.`);
 });
+ const languageButton = document.getElementById("languageToggle");
 
-cartButton.addEventListener("click", () => {
-  if (cart.length === 0) {
-    showToast("سبد خرید شما خالی است.");
-    return;
-  }
+if (languageButton) {
+  languageButton.addEventListener("click", function () {
+    currentLanguage = currentLanguage === "fa" ? "en" : "fa";
 
-  const total = cart.reduce((sum, product) => sum + product.price, 0);
+    localStorage.setItem("golden-language", currentLanguage);
 
-  showToast(
-    `${cart.length.toLocaleString("fa-IR")} محصول | مجموع: ${formatPrice(total)}`
-  );
-});
-
+    applyLanguage();
+  });
+}
 renderProducts();
